@@ -107,7 +107,7 @@ const UpdateCustomersForm = (props) => {
         ]
     } 
     else if (props.editLicenseForm && 
-    currentCustomer.licenseInfo.licenseType == 'CPU') {
+    currentCustomer.licenseInfo.licenseType === 'CPU') {
         content = 
         [
             // <span style={{fontWeight:'500'}}>Renewal date</span>,
@@ -207,7 +207,7 @@ const UpdateCustomersForm = (props) => {
             </Form.Item>
         ]
     } 
-    else if (props.editLicenseForm && currentCustomer.licenseInfo.licenseType == 'FNL' ) {
+    else if (props.editLicenseForm && currentCustomer.licenseInfo.licenseType === 'FNL' ) {
             content = 
             [
                 // <span style={{fontWeight:'500'}}>Renewal date</span>,
@@ -316,7 +316,7 @@ const UpdateCustomersForm = (props) => {
                 </Form.Item>
             ]
         } 
-        else if (props.editLicenseForm && currentCustomer.licenseInfo.licenseType == 'Monthly lease' ) {
+        else if (props.editLicenseForm && currentCustomer.licenseInfo.licenseType === 'Monthly lease' ) {
                 content = 
                 [
                     <span style={{fontWeight:'500'}}>Renewal date</span>,

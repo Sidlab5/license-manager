@@ -1,12 +1,11 @@
 import React from 'react';
-import {Row, Col, Button, Popconfirm, Typography, Tooltip} from 'antd';
+import {Row, Col, Popconfirm,Tooltip} from 'antd';
 import {CloseOutlined, EyeOutlined} from '@ant-design/icons'
 import './CustomersTableRow.css'
 
 
 const CustomersTableRow = (props) => {
 
-    const {Text} = Typography
 
     // const handleEdit = () => {
     //     props.handleShowEditForm()

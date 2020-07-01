@@ -15,11 +15,11 @@ const Container = () => {
 
       let content 
 
-      if (view == 1) {
+      if (view === 1) {
           content = <Customers/>
-      } else if (view == 2) {
+      } else if (view === 2) {
           content = <Releases/>
-      } else if (view == 3) {
+      } else if (view === 3) {
           content = <Log/>
       }
 

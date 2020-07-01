@@ -16,7 +16,6 @@ const Customers = () => {
     const [editPersonalForm, setEditPersonalForm] = useState()
     const [editLicenseForm, setEditLicenseForm] = useState()
     const [viewCustomer, setViewCustomer] = useState(false)
-    const [editing, setEditing] = useState(false)
     const initialFormState = { 
         id: null, 
         name : '',
@@ -118,7 +117,6 @@ const Customers = () => {
     }
 
     const editRow = customer => {
-    setEditing(true)
     
     setCurrentCustomer({ 
         id: customer.id, 
@@ -132,7 +130,6 @@ const Customers = () => {
     }
 
     const updateCustomer = (id, updatedCustomer) => {
-        setEditing(false)
         setCustomersData(customersData.map(customer => (customer.id === id ? updatedCustomer : customer)))
     }
 
