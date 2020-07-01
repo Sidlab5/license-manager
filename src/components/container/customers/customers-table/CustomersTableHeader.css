@@ -1,0 +1,13 @@
+.tHeader {
+    width: 100%;
+    border: 1px solid #ddd;
+    background-color: #fff;
+    font-size: 1.2rem;
+    font-weight: 500;
+}
+
+.tHeaderCell {
+    border-right: 1px solid #ddd;
+    padding: 5px;
+
+}

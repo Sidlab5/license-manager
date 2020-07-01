@@ -1,0 +1,28 @@
+.tRow {
+    width: 100%;
+    border: 1px solid #ddd;
+    background-color: #fff;
+    font-size: 1.2rem;
+    font-weight: 300;
+}
+
+.tRowCell {
+    border-right: 1px solid #ddd;
+    padding: 5px;
+}
+
+.noteArea {
+    border: 0;
+    padding: 0;
+}
+
+.ant-card-body {
+    padding: 0;
+}
+
+.tex:hover {
+    outline-color: #4baeff;
+}
+.tex:focus {
+    outline-color: #4baeff;
+}

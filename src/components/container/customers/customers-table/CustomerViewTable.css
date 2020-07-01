@@ -1,0 +1,22 @@
+.tViewRowHeader {
+    width: 100%;
+    padding: 1rem;
+    border: 1px solid #ddd;
+    background-color: #fff;
+    font-size: 1.5rem;
+    font-weight: 500;
+}
+
+.tViewRow {
+    width: 100%;
+    border: 1px solid #ddd;
+    border-top: 0;
+    background-color: #fff;
+    font-size: 1.2rem;
+    font-weight: 300;
+}
+
+.tViewRowCell {
+    border-bottom: 1px solid #ddd;
+    padding: 5px;
+}
