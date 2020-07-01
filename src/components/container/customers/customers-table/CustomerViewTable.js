@@ -4,12 +4,12 @@ import './CustomerViewTable.css'
 
 const CustomerViewTable = (props) => {
 
-    const [currentCustomer, setCurrentCustomer] = useState(props.currentCustomer)
+    const [currentCustomer] = useState(props.currentCustomer)
 
     let content = null 
-    if (currentCustomer.licenseInfo.licenseType == 'CPU' || 
-    currentCustomer.licenseInfo.licenseType == 'FNL' || 
-    currentCustomer.licenseInfo.licenseType == 'Monthly lease') 
+    if (currentCustomer.licenseInfo.licenseType === 'CPU' || 
+    currentCustomer.licenseInfo.licenseType === 'FNL' || 
+    currentCustomer.licenseInfo.licenseType === 'Monthly lease') 
     {
         content = 
          [
@@ -34,7 +34,7 @@ const CustomerViewTable = (props) => {
             <Col span={9}  className='tViewRowCell'>Number of months</Col>,
             <Col span={15} className='tViewRowCell'>{currentCustomer.licenseInfo.numberOfMonths}</Col>,
         ]
-    } else if (currentCustomer.licenseInfo.licenseType == 'Trial') {
+    } else if (currentCustomer.licenseInfo.licenseType === 'Trial') {
         content = 
         [
             <Col span={9}  className='tViewRowCell'>Start date</Col>,
@@ -46,7 +46,7 @@ const CustomerViewTable = (props) => {
             <Col span={9}  className='tViewRowCell'>MAC address</Col>,
             <Col span={15} className='tViewRowCell'>{currentCustomer.licenseInfo.macAddress}</Col>
         ]
-    } else if (currentCustomer.licenseInfo.licenseType == 'Student') {
+    } else if (currentCustomer.licenseInfo.licenseType === 'Student') {
         content = 
         [
             <Col span={9}  className='tViewRowCell'>Start date</Col>,

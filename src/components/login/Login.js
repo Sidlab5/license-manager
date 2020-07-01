@@ -1,5 +1,5 @@
 import React from 'react';
-import {Typography, Avatar, Form, Button, Input, Checkbox} from 'antd';
+import {Form, Button, Input, Checkbox} from 'antd';
 import { UserOutlined, LockOutlined } from '@ant-design/icons';
 import icon from '../../assets/sidlabicon.png';
 import { useHistory } from "react-router-dom";
@@ -8,15 +8,10 @@ import './Login.css';
 
 const Login = (props) => {
 
-    const {Title} = Typography
     const history = useHistory();
 
     const onFinish = values => {
         console.log('Success:', values);
-      };
-    
-      const onFinishFailed = errorInfo => {
-        console.log('Failed:', errorInfo);
       };
 
       const handleClick = () => {
@@ -27,7 +22,7 @@ const Login = (props) => {
     return (
         <div style={{width:'100%', display:'flex'}}>
         <div className='loginWrapper'>
-            <img style={{marginBottom:'2rem', width:'5rem'}} src={icon}/>
+            <img style={{marginBottom:'2rem', width:'5rem'}} src={icon} alt='sidlab'/>
             <div className='loginBox'>
                <div className='loginForm'>
                <Form

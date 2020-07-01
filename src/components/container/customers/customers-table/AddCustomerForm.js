@@ -1,7 +1,6 @@
 import React, {useState} from 'react';
 import { Form, Input, Button, Select, DatePicker, Typography} from 'antd';
-import {LeftCircleOutlined} from '@ant-design/icons';
-import moment from 'moment';
+
 
 
 
@@ -10,9 +9,7 @@ import moment from 'moment';
 const AddCustomerForm = (props) => {
     const [form] = Form.useForm();
     const {Text} = Typography
-    const dateFormatList = ['DD/MM/YYYY', 'DD/MM/YY'];
     const { Option } = Select;
-    const { RangePicker } = DatePicker;
 
     const initialFormState = { 
                 id: null, 
@@ -41,7 +38,6 @@ const AddCustomerForm = (props) => {
     const [customer, setCustomer] = useState(initialFormState)
     const [startDate, setStartDate] = useState(false)
     const [showDependantInput, setShowDependantInput] = useState()
-    const [generatedSN, setGeneratedSN] = useState()
 
     const handleInputChange = event => {
         const { name, value } = event.target
@@ -58,7 +54,7 @@ const AddCustomerForm = (props) => {
       }
 
       const handleSelectTypeChange = value => {
-          if (value == 'Monthly lease') {
+          if (value === 'Monthly lease') {
               setCustomer({...customer, 
                 modules: {...customer.licenseInfo.modules.push('Acoustics LF', 'Acoustics HF', 'Flow', 'Measurement', 'Acquisition')}})
                 setCustomer({ ...customer, licenseInfo: {...customer.licenseInfo, licenseType : value} })
@@ -79,10 +75,6 @@ const AddCustomerForm = (props) => {
 
       const handleSelectYearsChange = value => {
         setCustomer({ ...customer, licenseInfo: {...customer.licenseInfo, subscribtionYears : value} })
-      }
-
-      const handleRenewalDateChange = (date,dateString) => {
-        setCustomer({ ...customer, licenseInfo: {...customer.licenseInfo, renewalDate : dateString} })
       }
 
       const handlePurchaseDateChange = (date,dateString) => {
@@ -112,9 +104,11 @@ const AddCustomerForm = (props) => {
         setCustomer(initialFormState)
       }  
 
+      console.log(startDate)
+
       let content 
 
-      if (showDependantInput == 'CPU') {
+      if (showDependantInput === 'CPU') {
           content = 
           [
             <span style={{fontWeight:'500'}}>MATLAB files</span>,
@@ -151,7 +145,7 @@ const AddCustomerForm = (props) => {
                         </Select>
                     </Form.Item>
           ]
-      } else if (showDependantInput == 'FNL') {
+      } else if (showDependantInput === 'FNL') {
         content = 
         [
           <span style={{fontWeight:'500'}}>Code access</span>,
@@ -202,7 +196,7 @@ const AddCustomerForm = (props) => {
                       </Select>
                   </Form.Item>
         ]
-      } else if (showDependantInput == 'Monthly lease') {
+      } else if (showDependantInput === 'Monthly lease') {
         content = 
         [
                     <span style={{fontWeight:'500'}}>Number of months</span>,
@@ -456,17 +450,3 @@ console.log(customer)
 
 export default AddCustomerForm;
 
-
-  {/* <span style={{fontWeight:'500'}}>MAC address</span>
-                    <Form.Item
-                    name="macAddress"
-                    rules={[
-                    {
-                    required: true,
-                    message: 'Please input customer MAC address',
-                    },
-                    ]}
-                    >
-                        <Input name="macAddress" value={customer.licenseInfo.macAddress} 
-                        onChange={handleLicenseInputChange} />
-                    </Form.Item> */}

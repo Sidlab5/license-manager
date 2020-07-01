@@ -1,12 +1,8 @@
 import React, {useState} from 'react';
 import { Menu, Button } from 'antd';
 import {
-    AppstoreOutlined,
     MenuUnfoldOutlined,
     MenuFoldOutlined,
-    PieChartOutlined,
-    DesktopOutlined,
-    ContainerOutlined,
     UserOutlined,
     DropboxOutlined,
     LoginOutlined

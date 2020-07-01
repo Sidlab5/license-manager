@@ -397,7 +397,7 @@ const UpdateCustomersForm = (props) => {
                 ]
             } 
     else if (props.editLicenseForm && 
-        currentCustomer.licenseInfo.licenseType == 'Trial') {
+        currentCustomer.licenseInfo.licenseType === 'Trial') {
             content = 
             [
                 <span style={{fontWeight:'500'}}>Start date</span>,
@@ -441,7 +441,7 @@ const UpdateCustomersForm = (props) => {
             ]
         }
     else if (props.editLicenseForm && 
-        currentCustomer.licenseInfo.licenseType == 'Student') {
+        currentCustomer.licenseInfo.licenseType === 'Student') {
             content = 
             [
                 <span style={{fontWeight:'500'}}>Start date</span>,

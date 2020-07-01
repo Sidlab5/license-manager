@@ -1,11 +1,10 @@
 import React, {useState} from 'react';
-import { Form, Input, Button, Select, DatePicker} from 'antd';
+import { Form, Input, Button, DatePicker} from 'antd';
 
 
 const AddReleaseForm = (props) => {
 
     const [form] = Form.useForm();
-    const dateFormatList = ['DD/MM/YYYY', 'DD/MM/YY'];
     const {TextArea} = Input
 
     const initialFormState = { 
