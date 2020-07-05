@@ -5,7 +5,8 @@ import {
     MenuFoldOutlined,
     UserOutlined,
     DropboxOutlined,
-    LoginOutlined
+    LoginOutlined,
+    ReconciliationOutlined
   } from '@ant-design/icons';
 
 const Sidebar = (props) => {
@@ -38,6 +39,12 @@ const Sidebar = (props) => {
                 </Menu.Item>
                 <Menu.Item key="3" icon={<LoginOutlined />}>
                    Log
+                </Menu.Item>
+                <Menu.Item key="4" icon={<UserOutlined />}>
+                  Users
+                </Menu.Item>
+                <Menu.Item key="5" icon={<ReconciliationOutlined />}>
+                   Roles
                 </Menu.Item>
             </Menu>
         </div>

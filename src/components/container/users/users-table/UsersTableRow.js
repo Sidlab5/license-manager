@@ -1,5 +1,5 @@
 import React from 'react';
-import {Row, Col, Popconfirm, Typography, Tooltip, Input, Card} from 'antd';
+import {Row, Col, Popconfirm, Typography, Tooltip, Card} from 'antd';
 import {CloseOutlined} from '@ant-design/icons'
 
 const UsersTableRow = (props) => {
