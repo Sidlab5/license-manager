@@ -8,7 +8,7 @@ import Roles from './roles/Roles';
 
 const Container = () => {
 
-    const [view, setView] = useState(5)
+    const [view, setView] = useState('1')
 
    const handleClick = num => {
         console.log('click ', num);
@@ -17,15 +17,15 @@ const Container = () => {
 
       let content 
 
-      if (view == 1) {
+      if (view === '1') {
           content = <Customers/>
-      } else if (view == 2) {
+      } else if (view === '2') {
           content = <Releases/>
-      } else if (view == 3) {
+      } else if (view === '3') {
           content = <Log/>
-      } else if (view == 4) {
+      } else if (view === '4') {
         content = <Users/>
-    } else if (view == 5) {
+    } else if (view === '5') {
         content = <Roles/>
     }
 

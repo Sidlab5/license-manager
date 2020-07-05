@@ -1,11 +1,10 @@
 import React from 'react';
 import {Row, Col, Popconfirm, Typography, Tooltip, Input, Card} from 'antd';
-import {CloseOutlined, EyeOutlined} from '@ant-design/icons'
+import {CloseOutlined} from '@ant-design/icons'
 
 const UsersTableRow = (props) => {
 
     const {Text} = Typography
-    const { TextArea } = Input;
 
     const handleEdit = () => {
         props.handleShowEditForm()
