@@ -5,7 +5,8 @@
     display: flex;
     justify-content: space-between;
     padding: 1rem;
-    background-color: #fff;
+    background-color: #2d3e83;
+    border-radius: 5px;
     box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.082);
     z-index: 3;
 }
@@ -28,5 +29,6 @@
 .logoutBtn {
     display: flex;
     align-items: center;
+    color: #2d3e83;
     border-radius: 7px;
 }

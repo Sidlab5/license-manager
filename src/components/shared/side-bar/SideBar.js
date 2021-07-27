@@ -26,7 +26,7 @@ const SideBar = (props) => {
       <ul className={styles.sideBar}>
           <li className={styles.sideBarTitle}>
               <Avatar src={sidlabIcon}/>
-              <span style={{marginLeft:'8px'}}>Dashboard</span>
+              <span style={{marginLeft:'8px', color: '#fff'}}>Dashboard</span>
           </li>
           <Divider style={{backgroundColor:'#696f77', margin:'0'}}/>
           <li className={styles.sideBarTitle}>
@@ -37,31 +37,31 @@ const SideBar = (props) => {
             <Divider style={{backgroundColor:'#696f77', margin:'0', minWidth:'90%', width:'90%'}}/>
           </div>
           <li className={styles.sideBarItemContainer}>
-              <div onClick={()=> props.dispatch(setSidebarContent({num: 1}))} className={styles.sideBarItem}>
+              <div className={styles.sideBarItem}>
                 <Avatar size="small" icon={<CustomerServiceOutlined/>} />
                 <span style={{marginLeft:'8px'}}>Customers</span>
               </div>
           </li>
           <li className={styles.sideBarItemContainer}>
-              <div onClick={()=> props.dispatch(setSidebarContent({num: 2}))} className={styles.sideBarItem}>
+              <div className={styles.sideBarItem}>
                 <Avatar size="small" icon={<DropboxOutlined/>} />
                 <span style={{marginLeft:'8px'}}>Releases</span>
               </div>
           </li>
           <li className={styles.sideBarItemContainer}>
-              <div onClick={()=> props.dispatch(setSidebarContent({num: 3}))} className={styles.sideBarItem}>
+              <div className={styles.sideBarItem}>
                 <Avatar size="small" icon={<LoginOutlined />}/>
                 <span style={{marginLeft:'8px'}}>Log</span>
               </div>
           </li>
           <li className={styles.sideBarItemContainer}>
-              <div onClick={()=> props.dispatch(setSidebarContent({num: 4}))} className={styles.sideBarItem}>
+              <div className={styles.sideBarItem}>
                 <Avatar size="small" icon={<UsergroupAddOutlined/>} />
                 <span style={{marginLeft:'8px'}}>Users</span>
               </div>
           </li>
           <li className={styles.sideBarItemContainer}>
-              <div onClick={()=> props.dispatch(setSidebarContent({num: 5}))} className={styles.sideBarItem}>
+              <div className={styles.sideBarItem}>
                 <Avatar size="small" icon={<ReconciliationOutlined/>} />
                 <span style={{marginLeft:'8px'}}>Roles</span>
               </div>
@@ -70,11 +70,5 @@ const SideBar = (props) => {
     )
 }
 
-const mapStateToProps = ({sidebar}) => {
-  return {
-      sidebar
-  }
 
-}
-
-export default connect(mapStateToProps)(SideBar)
+export default SideBar;

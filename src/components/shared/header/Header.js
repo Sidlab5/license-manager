@@ -20,10 +20,10 @@ const Header = (props) => {
     if (props.isAuth) {
         content = <div className='userName'>
         <Avatar src="https://zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png" />
-        <Text style={{color:'royalblue', fontWeight:'500'}}>John Doe</Text>
+        <Text style={{color:'#fff', fontWeight:'500'}}>John Doe</Text>
         <Divider type="vertical" style={{height:'3rem', margin:'0 1rem'}} />
         <Button onClick={handleClick} className='logoutBtn'>
-            Logout <LogoutOutlined style={{fontSize:'2rem'}} />
+            Logout <LogoutOutlined style={{fontSize:'2rem', color: '#2d3e83'}} />
         </Button>
         
     </div>
@@ -33,8 +33,8 @@ const Header = (props) => {
         <Layout>
             <nav className='header'>
                 <div className='headerTitle'>
-                    <Avatar className='headerLogo' size="large" src={sidlabIcon} />
-                    <Title className='headerTitle' style={{color:'royalblue'}} level={4}>License Manager</Title>
+                    {/* <Avatar className='headerLogo' size="large" src={sidlabIcon} /> */}
+                    <Title className='headerTitle' style={{color:'#fff', letterSpacing: '3px', fontWeight: '500'}} level={4}>License Manager</Title>
                 </div>
                 {content}
             </nav>

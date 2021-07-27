@@ -26,8 +26,8 @@ const handleLogin = () => {
           <Route path="/admin" 
             render={() =>
               <React.Fragment>
-                <Header isAuth={isAuth} handleLogin={handleLogin}/> 
-                <Container/>
+                {/* <Header isAuth={isAuth} handleLogin={handleLogin}/>  */}
+                <Container isAuth={isAuth} handleLogin={handleLogin}/>
             </React.Fragment>
             }
           />
