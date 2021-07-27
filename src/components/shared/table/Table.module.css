@@ -1,0 +1,51 @@
+.tHeader {
+    width: 100%;
+    /* background-color: #fafafa; */
+    /* border-bottom: 1px solid #f0f0f0; */
+    border-bottom: 2px solid #dee2e6;
+    border-top: 1px solid #dee2e6;
+    font-size: 1.3rem;
+    font-weight: 700;
+}
+
+.tHeaderCell {
+    padding: 1rem;
+}
+
+.tRow {
+    width: 100%;
+    background-color: #fff;
+    font-size: 1.3rem;
+    font-weight: 300;
+    /* border-bottom: 1px solid #f0f0f0; */
+    border-bottom: 1px solid #dee2e6;
+}
+
+.tRow:last-child {
+    border-bottom: 0;
+}
+
+.tRowCell {
+   padding: 1rem;
+}
+
+.noteArea {
+    border: 0;
+    padding: 0;
+}
+
+.ant-card-body {
+    padding: 0;
+}
+
+.tex:hover {
+    outline-color: #4baeff;
+}
+
+.tex:focus {
+    outline-color: #4baeff;
+}
+
+.tRow:nth-child(even){
+    background-color: #f2f2f2;
+  }

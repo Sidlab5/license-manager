@@ -1,0 +1,4 @@
+export const SIDEBAR_CONTENT = 'SIDEBAR_CONTENT';
+export const SET_PROFILE = 'SET_PROFILE';
+
+
