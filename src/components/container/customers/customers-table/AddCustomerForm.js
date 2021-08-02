@@ -2,10 +2,6 @@ import React, {useState} from 'react';
 import { Form, Input, Button, Select, DatePicker, Typography} from 'antd';
 
 
-
-
-
-
 const AddCustomerForm = (props) => {
     const [form] = Form.useForm();
     const {Text} = Typography
@@ -111,7 +107,7 @@ const AddCustomerForm = (props) => {
       if (showDependantInput === 'CPU') {
           content = 
           [
-            <span style={{fontWeight:'500'}}>MATLAB files</span>,
+            // <span style={{fontWeight:'500'}}>MATLAB files</span>,
             <Form.Item
             name="codeAccess"
             rules={[
@@ -121,19 +117,20 @@ const AddCustomerForm = (props) => {
             },
             ]}
             >
-                <Select name="licenseType" style={{ width: '100%' }} 
+                <Select placeholder='MATLAB files' name="licenseType" style={{ width: '100%' }} 
                 onChange={handleSelectCodeChange}> 
                     <Option value="Combiled">Combiled</Option>
                     <Option value="MATLAB">MATLAB</Option>
                 </Select>
             </Form.Item>,
 
-                    <span style={{fontWeight:'500'}}>Purchased modules</span>,
+                    // <span style={{fontWeight:'500'}}>Purchased modules</span>,
                     <Form.Item
                     name="purchasedmodule"
                     >
                         <Select
                         mode="multiple"
+                        placeholder='Purchased modules'
                         style={{ width: '100%' }}
                         onChange={handleMultipleSelectChange}
                         >
@@ -148,7 +145,7 @@ const AddCustomerForm = (props) => {
       } else if (showDependantInput === 'FNL') {
         content = 
         [
-          <span style={{fontWeight:'500'}}>Code access</span>,
+        //   <span style={{fontWeight:'500'}}>Code access</span>,
           <Form.Item
           name="codeAccess"
           rules={[
@@ -158,14 +155,14 @@ const AddCustomerForm = (props) => {
           },
           ]}
           >
-              <Select name="licenseType" style={{ width: '100%' }} 
+              <Select name="licenseType" placeholder='Code access' style={{ width: '100%' }} 
               onChange={handleSelectCodeChange}> 
                   <Option value="Combiled">Combiled</Option>
                   <Option value="MATLAB">MATLAB</Option>
               </Select>
           </Form.Item>,
 
-          <span style={{fontWeight:'500'}}>Number of seats</span>,
+        //   <span style={{fontWeight:'500'}}>Number of seats</span>,
                   <Form.Item
                   name="numberOfSeats"
                   rules={[
@@ -175,7 +172,7 @@ const AddCustomerForm = (props) => {
                   },
                   ]}
                   >
-                      <Input name="numberOfSeats" value={customer.licenseInfo.numberOfSeats} 
+                      <Input name="numberOfSeats" placeholder='Number of seats' value={customer.licenseInfo.numberOfSeats} 
                       onChange={handleLicenseInputChange} />
                   </Form.Item>,
 
@@ -186,6 +183,7 @@ const AddCustomerForm = (props) => {
                       <Select
                       mode="multiple"
                       style={{ width: '100%' }}
+                      placeholder='Purchased modules'
                       onChange={handleMultipleSelectChange}
                       >
                           <Option value="Acoustics LF">Acoustics LF</Option>
@@ -199,7 +197,7 @@ const AddCustomerForm = (props) => {
       } else if (showDependantInput === 'Monthly lease') {
         content = 
         [
-                    <span style={{fontWeight:'500'}}>Number of months</span>,
+                    // <span style={{fontWeight:'500'}}>Number of months</span>,
                     <Form.Item
                     name="numberOfMonths"
                     rules={[
@@ -209,7 +207,7 @@ const AddCustomerForm = (props) => {
                     },
                     ]}
                     >
-                        <Input name="numberOfMonths" value={customer.licenseInfo.numberOfMonths} 
+                        <Input name="numberOfMonths" placeholder='Number of months' value={customer.licenseInfo.numberOfMonths} 
                         onChange={handleLicenseInputChange} />
                     </Form.Item>
         ]
@@ -219,7 +217,6 @@ const AddCustomerForm = (props) => {
         setCustomer({ ...customer, licenseInfo: {...customer.licenseInfo, activationSN : 'a8hf8f-adf9-hkk'} })
       }
 
-console.log(customer)
     return (
         <React.Fragment>
             {/* <LeftCircleOutlined style={{marginBottom:'1rem', fontSize:'2.5rem'}} onClick={props.handleShowAddForm} /> */}
@@ -235,7 +232,6 @@ console.log(customer)
                 onFinish={onFinish}
                 >
 
-                    <span style={{fontWeight:'500'}}>Name</span>
                     <Form.Item
                     name="name"
                     rules={[
@@ -245,10 +241,9 @@ console.log(customer)
                     },
                     ]}
                     >
-                        <Input name="name"  value={customer.name} onChange={handleInputChange} />
+                        <Input name="name" placeholder='Name' value={customer.name} onChange={handleInputChange} />
                     </Form.Item>
 
-                    <span style={{fontWeight:'500'}}>Organization</span>
                     <Form.Item
                     name="organization"
                     rules={[
@@ -258,10 +253,9 @@ console.log(customer)
                     },
                     ]}
                     >
-                        <Input name="organization" value={customer.organization} onChange={handleInputChange} />
+                        <Input name="organization" placeholder='Organization' value={customer.organization} onChange={handleInputChange} />
                     </Form.Item>
 
-                    <span style={{fontWeight:'500'}}>Country</span>
                     <Form.Item
                     name="country"
                     rules={[
@@ -276,6 +270,7 @@ console.log(customer)
                         name="country" 
                         style={{ width: '100%' }} 
                         optionFilterProp="children"
+                        placeholder='Country'
                         onChange={handleSelectCountryChange}
                         onFocus={onFocus}
                         onBlur={onBlur}
@@ -313,7 +308,6 @@ console.log(customer)
                         </Select>
                     </Form.Item>
 
-                    <span style={{fontWeight:'500'}}>Phone</span>
                     <Form.Item
                     name="phone"
                     rules={[
@@ -323,10 +317,9 @@ console.log(customer)
                     },
                     ]}
                     >
-                        <Input name="phone" value={customer.phone} onChange={handleInputChange} />
+                        <Input name="phone" placeholder='Phone' value={customer.phone} onChange={handleInputChange} />
                     </Form.Item>
 
-                    <span style={{fontWeight:'500'}}>Email</span>
                     <Form.Item
                     name="email" 
                     rules={[
@@ -340,10 +333,9 @@ console.log(customer)
                     },
                     ]}
                     >
-                        <Input name="email" value={customer.email} onChange={handleInputChange} />
+                        <Input name="email" placeholder='Email' value={customer.email} onChange={handleInputChange} />
                     </Form.Item>
 
-                    <span style={{fontWeight:'500'}}>Purchase date</span>
                     <Form.Item
                     name="purchaseDate"
                     rules={[
@@ -353,12 +345,11 @@ console.log(customer)
                     },
                     ]}
                     >
-                        <DatePicker name="purchaseDate" value={customer.licenseInfo.purchaseDate} 
-                        placeholder="" style={{ width: '100%' }} format='DD/MM/YYYY' 
+                        <DatePicker name="purchaseDate" placeholder='Purchase date' value={customer.licenseInfo.purchaseDate} 
+                         style={{ width: '100%' }} format='DD/MM/YYYY' 
                         onChange={handlePurchaseDateChange} />
                     </Form.Item>
 
-                    <span style={{fontWeight:'500'}}>Subscription years</span>
                     <Form.Item
                     name="subscribtionYears"
                     rules={[
@@ -368,7 +359,7 @@ console.log(customer)
                     },
                     ]}
                     >
-                        <Select name="subscribtionYears" value={customer.licenseInfo.subscribtionYears} 
+                        <Select name="subscribtionYears" placeholder='Subscription years' value={customer.licenseInfo.subscribtionYears} 
                         style={{ width: '100%' }}
                         onChange={handleSelectYearsChange}>
                             <Option value="1">1</Option>
@@ -379,43 +370,12 @@ console.log(customer)
                         </Select>
                     </Form.Item>
 
-                    <span style={{fontWeight:'500'}}>Eligible version</span>
                     <Form.Item
                     name="eligibleVersion">
-                        <Input name="eligibleVersion" value={customer.licenseInfo.eligibleVersion} 
+                        <Input name="eligibleVersion" placeholder='Eligible version' value={customer.licenseInfo.eligibleVersion} 
                         onChange={handleLicenseInputChange} />
                     </Form.Item>
-                    
-                    <span style={{fontWeight:'500'}}>License type</span>
-                    <Form.Item
-                    name="licenseType"
-                    rules={[
-                    {
-                    required: true,
-                    message: 'Please input customer license type',
-                    },
-                    ]}
-                    >
-                        <Select name="licenseType" style={{ width: '100%' }} 
-                        onChange={handleSelectTypeChange}> 
-                            <Option value="CPU">CPU</Option>
-                            <Option value="FNL">FNL</Option>
-                            <Option value="Monthly lease">Monthly lease</Option>
-                        </Select>
-                    </Form.Item>
 
-                    {content}
-
-                        <Button 
-                        onClick={handleGenerateSN}
-                        style={{paddingRight:'3rem', paddingLeft:'3rem', borderRadius:'5px', marginRight:'.7rem'}} 
-                        type="primary">
-                            Generate SN
-                        </Button>
-                            <Text style={{marginLeft:'1rem'}}>{customer.licenseInfo.activationSN}</Text>
-                        <br/><br/>
-
-                        <span style={{fontWeight:'500'}}>Start date</span>
                         <Form.Item
                         name="startDate"
                         rules={[
@@ -425,19 +385,48 @@ console.log(customer)
                         },
                         ]}
                         >
-                            <DatePicker name="purchaseDate" value={customer.licenseInfo.startDate} 
-                            placeholder="" style={{ width: '100%' }} format='DD/MM/YYYY' 
+                            <DatePicker name="purchaseDate" placeholder='Start date' value={customer.licenseInfo.startDate} 
+                            style={{ width: '100%' }} format='DD/MM/YYYY' 
                             onChange={handleStartDateChange} />
                         </Form.Item>
+                    
+                    <Form.Item
+                    name="licenseType"
+                    rules={[
+                    {
+                    required: true,
+                    message: 'Please input customer license type',
+                    },
+                    ]}
+                    >
+                        <Select name="licenseType" placeholder='License type' style={{ width: '100%' }} 
+                        onChange={handleSelectTypeChange}> 
+                            <Option value="CPU">CPU</Option>
+                            <Option value="FNL">FNL</Option>
+                            <Option value="Monthly lease">Monthly lease</Option>
+                        </Select>
+                    </Form.Item>
 
-                        <Button onClick={() => setStartDate(true)} 
+
+                    {content}
+
+                        {/* <Button 
+                        onClick={handleGenerateSN}
+                        style={{paddingRight:'3rem', paddingLeft:'3rem', borderRadius:'5px', marginRight:'.7rem'}} 
+                        type="primary">
+                            Generate SN
+                        </Button>
+                            <Text style={{marginLeft:'1rem'}}>{customer.licenseInfo.activationSN}</Text> */}
+                        {/* <br/><br/> */}
+
+                        {/* <Button onClick={() => setStartDate(true)} 
                         style={{paddingRight:'3rem', paddingLeft:'3rem', borderRadius:'5px'}} 
                         type="primary" >
                             Generate course Code
-                        </Button>
-                <br/><br/>
+                        </Button> */}
+                {/* <br/><br/> */}
                         <Button 
-                        style={{paddingRight:'3rem', paddingLeft:'3rem', borderRadius:'5px'}} 
+                        style={{paddingRight:'3rem', paddingLeft:'3rem', borderRadius:'5px', backgroundColor: '#008acd'}} 
                         type="primary" htmlType="submit">
                             Add Customer
                         </Button>

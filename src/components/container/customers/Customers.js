@@ -6,6 +6,9 @@ import AddCustomerForm from './customers-table/AddCustomerForm';
 import UpdateCustomersForm from './customers-table/UpdateCustomerForm';
 import CustomerViewTable from './customers-table/CustomerViewTable';
 import '../../../App.css'
+import CustomerCourseCodes from './customer-codes/CustomerCourseCodes';
+import SidlabTable from '../../shared/table/SidlabTable';
+import { customersConstants } from './customersConstants';
 
 const Customers = () => {
 
@@ -134,6 +137,7 @@ const Customers = () => {
     }
 
     let content = null;
+    let content1 = null;
     if (showAddForm) {
         content = <AddCustomerForm 
                     addCustomer={addCustomer} 
@@ -153,41 +157,63 @@ const Customers = () => {
                 handleEditPersonalForm={handleEditPersonalForm}
                 handleViewCustomer={handleViewCustomer}
                 handleEditLicenseForm={handleEditLicenseForm}/>
+    content1 = <CustomerCourseCodes />
     } else {
         content = [
             <Search
                 placeholder="input search text"
-                style={{ width: 200, marginBottom:'1rem' }}
+                style={{ width: 200, marginBottom:'2rem' }}
             />,   
-                <Button style={{margin:'0 5px'}} onClick={handleShowAddForm}>Add</Button>,
-                <Button>Export</Button>,
-         <CustomersTableHeader/>,
-            customersData.map(customer => {
-                return <CustomersTableRow 
-                        key={customer.id} 
-                        id={customer.id}
-                        customer={customer}
-                        name={customer.name} 
-                        email={customer.email} 
-                        date={customer.licenseInfo}
-                        editRow={editRow}
-                        handleShowEditForm={handleShowEditForm}
-                        deleteCustomer={deleteCustomer}
-                        handleViewCustomer={handleViewCustomer}
-                        />})
+                <SidlabTable 
+                    data={customersData}
+                    cols={customersConstants(deleteCustomer, handleViewCustomer, editRow)}
+                />,
+                <div style={{marginTop: '2rem'}}>
+                    <Button type='primary' style={{marginRight: '1rem', borderRadius: '7px', backgroundColor: '#008acd'}} onClick={handleShowAddForm}>Add</Button>
+                    <Button type='primary' style={{borderRadius: '7px', backgroundColor: '#008acd'}}>Export</Button>
+                </div>
+                
+        //  <CustomersTableHeader/>,
+        //     customersData.map(customer => {
+        //         return <CustomersTableRow 
+        //                 key={customer.id} 
+        //                 id={customer.id}
+        //                 customer={customer}
+        //                 name={customer.name} 
+        //                 email={customer.email} 
+        //                 date={customer.licenseInfo}
+        //                 editRow={editRow}
+        //                 handleShowEditForm={handleShowEditForm}
+        //                 deleteCustomer={deleteCustomer}
+        //                 handleViewCustomer={handleViewCustomer}
+        //                 />})
                     ]
                      }
 
     return (
+        <div style={{display: 'flex'}}>
         <div 
         className='scrolling' 
         style={
             {
-                width:'65%', marginTop:'5rem'
+                width:'65%',
+                paddingTop: '2rem',
+                marginRight: '2rem'
            // height:'50rem', overflowY:'scroll'
         }}
         >
             {content}
+        </div>
+        <div
+        className='scrolling' 
+        style={
+            {
+                width:'30%',
+                paddingTop: '2rem'
+           // height:'50rem', overflowY:'scroll'
+        }}>
+            {content1}
+        </div>
         </div>
     )
 }

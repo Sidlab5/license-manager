@@ -90,6 +90,10 @@ const Users = () => {
         />, 
             <Button onClick={handleShowAddForm} style={{margin:'0 5px'}}>{variable.Add}</Button>,
             <Button>{variable.Export}</Button>,
+            // <SidlabTable 
+            //     data={usersData}
+            //     cols={customersConstants(deleteUser, handleViewCustomer, editRow)}
+            // />,
         <UsersTableHeader/>,
         usersData.map((user) => {
            return <UsersTableRow 

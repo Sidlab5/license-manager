@@ -1,14 +1,16 @@
-import React from 'react';
+import React, {useState} from 'react';
 import {Form, Button, Input, Checkbox} from 'antd';
-import { UserOutlined, LockOutlined } from '@ant-design/icons';
-import icon from '../../assets/sidlabicon.png';
+import { UserOutlined, LockOutlined, SyncOutlined } from '@ant-design/icons';
+import icon from '../../assets/SidlabIcon-02.png';
 import { useHistory } from "react-router-dom";
 
 import './Login.css';
+import SignUp from '../signUp/SignUp';
 
 const Login = (props) => {
 
     const history = useHistory();
+    const [isSignUp, setIsSignUp] = useState(false);
 
     const onFinish = values => {
         console.log('Success:', values);
@@ -17,6 +19,11 @@ const Login = (props) => {
       const handleClick = () => {
           history.push('/admin')
           props.handleLogin()
+          props.setIsCustomer(false)
+      }
+
+      const handleSwitch = () => {
+        setIsSignUp(!isSignUp);
       }
 
     return (
@@ -24,6 +31,7 @@ const Login = (props) => {
         <div className='loginWrapper'>
             <img style={{marginBottom:'2rem', width:'5rem'}} src={icon} alt='sidlab'/>
             <div className='loginBox'>
+                {isSignUp? <SignUp handleLogin={props.handleLogin} setIsCustomer={props.setIsCustomer} /> : 
                <div className='loginForm'>
                <Form
                style={{width:'100%'}}
@@ -43,7 +51,7 @@ const Login = (props) => {
                         },
                         ]}
                     >
-                        <Input prefix={<UserOutlined className="site-form-item-icon" />} placeholder="Username" />
+                        <Input placeholder="Username" />
                     </Form.Item>
                     <Form.Item
                         name="password"
@@ -55,25 +63,22 @@ const Login = (props) => {
                         ]}
                     >
                         <Input
-                        prefix={<LockOutlined className="site-form-item-icon" />}
                         type="password"
                         placeholder="Password"
                         />
                     </Form.Item>
-
-                    <Form.Item name="remember" valuePropName="checked" >
-                            <Checkbox>Remember me</Checkbox>
-                        </Form.Item>
-                      
                         <Form.Item>
                             <Button 
                                 style={{width:'100%'}} 
                                 onClick={handleClick} type="primary" htmlType="submit" className="login-form-button">
-                                Log in
+                                Sign In
                             </Button>  
                         </Form.Item>                      
 
                 </Form>
+               </div>}
+               <div onClick={handleSwitch} style={{display: 'flex', justifyContent: 'center', cursor: 'pointer'}}>
+                   <i style={{marginRight: '1rem'}}><SyncOutlined /></i><span>{isSignUp? 'Sign In' : 'Sign Up'}</span>
                </div>
             </div>
         </div>

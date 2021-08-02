@@ -10,9 +10,8 @@
 
 .loginBox {
     width: 30rem;
-   height: 45vh;
     padding: 2rem;
-    border-radius: 5px;
+    border-radius: 10px;
     border: 1px solid #ddd;
     background-color: #fff;
     justify-content: center;

@@ -5,8 +5,10 @@
     display: flex;
     justify-content: space-between;
     padding: 1rem;
-    background-color: #2d3e83;
+    background-color: #008acd; 
     border-radius: 5px;
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
     box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.082);
     z-index: 3;
 }

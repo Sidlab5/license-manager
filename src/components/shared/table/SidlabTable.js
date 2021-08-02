@@ -4,7 +4,7 @@ import { Col, Row } from 'antd';
 
 const SidlabTable = ({ cols, data, methods}) => {
 
-    const [setSelectedRowId] = useState(null)
+    const [selectedRowId, setSelectedRowId] = useState(null)
 
 
     const handleClick = (selectedItem) => {
@@ -18,16 +18,16 @@ const SidlabTable = ({ cols, data, methods}) => {
         <Row style={{width:'100%'}}>
             <Row style={{width:'100%'}} className={styles.tHeader}>
                     {cols.map((headerItem, index) => (
-                        <Col key={index} className={styles.tHeaderCell} style={{width: headerItem.width}}>{headerItem.title}</Col>
+                        <Col key={index} className={styles.tHeaderCell} style={{width: headerItem.width, display: 'flex', justifyContent: 'center', alignItems: 'center'}}>{headerItem.title}</Col>
                     ))}
             </Row>
                 {data.map((item) => (
                     <Row
                         onClick={() => handleClick(item)}  
-                        // style={{backgroundColor: selectedRowId === item.id ? "#f3f3f3" : "#fff"}} 
-                        className={styles.tRow}>
+                        style={{backgroundColor: "#fff", width: '100%'}} 
+                        className={styles.unSortedTableRow}>
                         {cols.map((col, key) => (
-                            <Col key={key} className={styles.tRowCell} style={{width: col.width}}>
+                            <Col key={key} className={styles.unSortedTableRowCell} style={{width: col.width, display: 'flex', justifyContent: 'center', alignItems: 'center'}}>
                                 {col.render(item)}
                             </Col>
                         ))}

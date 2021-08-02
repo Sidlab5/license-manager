@@ -12,7 +12,31 @@ const SideNav = (props) => {
   // }
 
     return (
-
+      <>
+      {props.isCustomer? <ul className={styles.sideNav}>
+           <div style={{paddingLeft: '1rem', paddingBottom: '4rem', paddingTop: '1rem'}}>
+            <Avatar src={sidlabIcon}/>
+              <span style={{marginLeft:'8px', color: '#fff', letterSpacing: '1px', fontWeight: '500'}}>SIDLAB</span>
+            </div>
+            <li 
+              className={`${styles.sideNavItem} ${props.view==6? styles.sideNavItemActive : "" }`}>
+                <button onClick={() => props.handleClick(6)} className={styles.sideNavBtn}>
+                  <i style={{marginRight: '1rem'}}><UserOutlined /></i> Profile
+                </button>
+            </li>
+            <li 
+              className={`${styles.sideNavItem} ${props.view==7? styles.sideNavItemActive : "" }`}>
+                <button onClick={() => props.handleClick(7)} className={styles.sideNavBtn}>
+                <i style={{marginRight: '1rem'}}><DropboxOutlined /></i> Licenses
+                </button>
+            </li>
+            <li
+              className={`${styles.sideNavItem} ${props.view==8? styles.sideNavItemActive : "" }`}>
+              <button onClick={() => props.handleClick(8)} className={styles.sideNavBtn}>
+              <i style={{marginRight: '1rem'}}><LoginOutlined /></i> Quotation
+              </button>
+            </li>
+        </ul> : 
         <ul className={styles.sideNav}>
            <div style={{paddingLeft: '1rem', paddingBottom: '4rem', paddingTop: '1rem'}}>
             <Avatar src={sidlabIcon}/>
@@ -39,18 +63,20 @@ const SideNav = (props) => {
 
             <li 
               className={`${styles.sideNavItem} ${props.view==4? styles.sideNavItemActive : "" }`}>
-            <button onClick={() => props.handleTabClick(4)} className={styles.sideNavBtn}>
+            <button onClick={() => props.handleClick(4)} className={styles.sideNavBtn}>
             <i style={{marginRight: '1rem'}}><UserOutlined /></i> Users
             </button>
             </li>
 
             <li 
               className={`${styles.sideNavItem} ${props.active==5? styles.sideNavItemActive : "" }`}>
-                <button onClick={() => props.handleTabClick(5)} className={`${styles.sideNavBtn}`}>
+                <button onClick={() => props.handleClick(5)} className={`${styles.sideNavBtn}`}>
                 <i style={{marginRight: '1rem'}}><ReconciliationOutlined /></i> Roles
                 </button>
             </li>
         </ul>
+      }
+        </>
     )
 }
 

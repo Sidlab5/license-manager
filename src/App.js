@@ -16,18 +16,20 @@ const handleLogin = () => {
   setIsAuth(!isAuth)
 }
 
+const [isCustomer, setIsCustomer] = useState(false);
+
   return (
     <div>
        <Switch>
           <Route exact path="/" render={() =>
-             <Login handleLogin={handleLogin}/>
+             <Login handleLogin={handleLogin} setIsCustomer={setIsCustomer}/>
           }
           />
           <Route path="/admin" 
             render={() =>
               <React.Fragment>
                 {/* <Header isAuth={isAuth} handleLogin={handleLogin}/>  */}
-                <Container isAuth={isAuth} handleLogin={handleLogin}/>
+                <Container isAuth={isAuth} handleLogin={handleLogin} isCustomer={isCustomer}/>
             </React.Fragment>
             }
           />

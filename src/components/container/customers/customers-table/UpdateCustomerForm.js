@@ -524,11 +524,11 @@ const UpdateCustomersForm = (props) => {
             form={form}
             onFinish={onFinish}>
         {content}
-        <Button onClick={handleClick} style={{paddingRight:'3rem', paddingLeft:'3rem', borderRadius:'5px'}} 
+        <Button onClick={handleClick} style={{paddingRight:'3rem', paddingLeft:'3rem', borderRadius:'5px', backgroundColor: '#008acd'}} 
         type="primary" htmlType="submit">
-                        Update Customer
+            Update Customer
         </Button>
-            <Button style= {{marginLeft:'5px'}} onClick={props.handleShowEditForm}>Cancel</Button>
+        <Button style= {{marginLeft:'5px'}} onClick={props.handleShowEditForm}>Cancel</Button>
        
     </Form>
     </div>
